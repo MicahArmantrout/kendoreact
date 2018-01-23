@@ -11,14 +11,14 @@ class App extends Component {
       dateTime: new Date()
     };
 
-    //this.onChange - this.onChange.bind(this);
+   this._onchange = this._onchange.bind(this);
   }
 
-  onchange(e) {
+  
+
+  _onchange(e) {
     console.log(e.sender.value());
-    this.setState({
-      dateTime: e.sender.value()
-    });
+     this.setState({ dateTime: e.sender.value()});
   }
 
 
