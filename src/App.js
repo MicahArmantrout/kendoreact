@@ -14,12 +14,27 @@ class App extends Component {
     //this.onChange - this.onChange.bind(this);
   }
 
+  onchange(e) {
+    console.log(e.sender.value());
+    this.setState({
+      dateTime: e.sender.value()
+    });
+  }
+
 
 
   render() {
     return (
       <div className="App">
-        
+        <div className="date-picker" >
+          <DatePicker
+            value={this.dateTime}
+            min={new Date(2017, 11, 1)}
+            max={new Date(2018, 11, 1)}
+            format={"yy/MM/dd"}
+            change={this.onchange}
+            />
+        </div>
       </div>
     );
   }
